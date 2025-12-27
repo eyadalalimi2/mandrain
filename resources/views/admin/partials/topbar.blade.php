@@ -82,8 +82,8 @@
             <div class="dropdown">
                 <button class="btn btn-outline-secondary d-flex align-items-center" type="button" id="profileDropdown"
                     data-bs-toggle="dropdown" aria-expanded="false">
-                    <img src="{{ Auth::guard('admin')->user()->avatar ?? asset('admin/images/default-avatar.png') }}"
-                        alt="Avatar" class="rounded-circle me-2" width="30" height="30">
+                    <img src="{{ Auth::guard('admin')->user()->avatar_url }}" alt="Avatar" class="rounded-circle me-2"
+                        width="30" height="30">
                     <span>{{ Auth::guard('admin')->user()->name ?? 'الأدمن' }}</span>
                     <span class="badge bg-secondary ms-2">{{ Auth::guard('admin')->user()->role ?? 'أدمن' }}</span>
                 </button>

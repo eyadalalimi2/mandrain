@@ -24,4 +24,12 @@ class Admin extends Authenticatable
         'is_active' => 'boolean',
         'last_login_at' => 'datetime',
     ];
+
+    public function getAvatarUrlAttribute()
+    {
+        if ($this->avatar && !str_starts_with($this->avatar, 'http')) {
+            return asset('storage/' . $this->avatar);
+        }
+        return asset('admin/images/default-avatar.png');
+    }
 }
