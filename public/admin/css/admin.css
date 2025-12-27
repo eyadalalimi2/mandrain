@@ -168,3 +168,78 @@
   --color-input-border: var(--color-border);
   --color-input-focus-ring: var(--color-primary-300);
 }
+
+/* ========================================
+   DARK THEME
+   ======================================== */
+
+.theme-dark {
+  --color-background: #1a1a1a;
+  --color-surface: #2d2d2d;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #cccccc;
+  --color-text-muted: #888888;
+  --color-border: #444444;
+  --color-border-light: #333333;
+
+  --color-navbar-bg: #2d2d2d;
+  --color-navbar-text: #ffffff;
+  --color-navbar-icon: #ffffff;
+  --color-navbar-hover: #444444;
+  --color-navbar-active: #555555;
+  --color-navbar-border: #444444;
+
+  --color-sidebar-bg: #2d2d2d;
+  --color-sidebar-text: #ffffff;
+  --color-sidebar-icon: #ffffff;
+  --color-sidebar-hover-bg: #444444;
+  --color-sidebar-active-bg: #555555;
+  --color-sidebar-active-indicator: #ffcc80;
+  --color-sidebar-submenu-bg: #333333;
+
+  --color-footer-bg: #2d2d2d;
+  --color-footer-text: #ffffff;
+  --color-footer-border: #444444;
+
+  --color-card-header-bg: #333333;
+  --color-card-border: #444444;
+  --color-card-shadow: rgba(0, 0, 0, 0.3);
+
+  --color-input-bg: #333333;
+  --color-input-border: #444444;
+  --color-input-focus-ring: var(--color-primary-300);
+}
+
+/* Topbar specific styles */
+.topbar {
+  background-color: #ffffff !important;
+  color: #000 !important;
+  height: 56px;
+  z-index: 1030;
+}
+
+body {
+  padding-top: 56px;
+}
+
+.topbar .btn {
+  background-color: transparent !important;
+  border: 1px solid #dee2e6 !important;
+  color: #000 !important;
+}
+
+.topbar .btn:hover {
+  background-color: #f8f9fa !important;
+  color: #000 !important;
+}
+
+.topbar .badge {
+  background-color: #ffcc00 !important;
+  color: #000 !important;
+}
+
+.dropdown-menu {
+  background-color: #ffffff !important;
+  border: 1px solid #dee2e6 !important;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}

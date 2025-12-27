@@ -15,8 +15,11 @@ class AdminSeeder extends Seeder
     public function run(): void
     {
         Admin::create([
+            'name' => 'الأدمن الرئيسي',
             'phone' => '780181825',
             'password' => Hash::make('admin'),
+            'avatar' => '/admin/images/default-avatar.png',
+            'role' => 'super_admin',
             'is_active' => true,
         ]);
     }

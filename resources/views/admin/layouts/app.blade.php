@@ -4,15 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title', 'لوحة تحكم سوبر ماركت الخضروات والفواكه')</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>@yield('title', 'لوحة التحكم - Mandrain')</title>
     <!-- Bootstrap RTL CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <!-- Custom Admin CSS -->
     <link href="{{ asset('admin/css/admin.css') }}" rel="stylesheet">
+    @stack('styles')
     <style>
         .sidebar {
-            background-color: var(--color-sidebar-bg);
-            color: var(--color-sidebar-text);
+            background-color: #ffffff;
+            color: #000;
             min-height: 100vh;
             width: 250px;
         }
@@ -44,11 +48,14 @@
     </style>
 </head>
 
-<body>
+<body class="theme-light d-flex flex-column min-vh-100">
+    <!-- Topbar -->
+    @include('admin.partials.topbar')
+
     <!-- Sidebar Offcanvas for Mobile -->
     <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebarOffcanvas" aria-labelledby="sidebarOffcanvasLabel">
         <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="sidebarOffcanvasLabel">سوبر ماركت الخضروات والفواكه</h5>
+            <h5 class="offcanvas-title" id="sidebarOffcanvasLabel">Mandrain Admin</h5>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
@@ -56,28 +63,45 @@
         </div>
     </div>
 
-    <div class="d-flex">
-        <!-- Sidebar for Desktop -->
-        <div class="d-none d-lg-block sidebar">
-            @include('admin.partials.sidebar')
+    <body class="theme-light d-flex flex-column min-vh-100">
+        <!-- Topbar -->
+        @include('admin.partials.topbar')
+
+        <!-- Sidebar Offcanvas for Mobile -->
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebarOffcanvas"
+            aria-labelledby="sidebarOffcanvasLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="sidebarOffcanvasLabel">Mandrain Admin</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                @include('admin.partials.sidebar')
+            </div>
         </div>
 
-        <div class="flex-grow-1 d-flex flex-column min-vh-100">
-            <!-- Topbar -->
-            @include('admin.partials.topbar')
-
-            <!-- Main Content -->
-            <div class="content flex-grow-1 p-3">
-                @yield('content')
+        <div class="d-flex flex-grow-1">
+            <!-- Sidebar for Desktop -->
+            <div class="d-none d-lg-block sidebar bg-white border-end">
+                @include('admin.partials.sidebar')
             </div>
 
-            <!-- Footer -->
-            @include('admin.partials.footer')
-        </div>
-    </div>
+            <div class="flex-grow-1 d-flex flex-column">
+                <!-- Main Content -->
+                <div class="content flex-grow-1 p-3">
+                    @yield('content')
+                </div>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+                <!-- Footer -->
+                <footer class="bg-white border-top py-3 text-center">
+                    @include('admin.partials.footer')
+                </footer>
+            </div>
+        </div>
+
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="{{ asset('js/admin.js') }}"></script>
+        @stack('scripts')
+    </body>
 
 </html>

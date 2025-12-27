@@ -16,6 +16,8 @@ class Admin extends Authenticatable
         'password',
         'is_active',
         'last_login_at',
+        'avatar',
+        'role',
     ];
 
     protected $casts = [
