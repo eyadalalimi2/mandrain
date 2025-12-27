@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-white border-bottom fixed-top">
+<nav class="navbar navbar-expand-lg fixed-top">
     <div class="container-fluid">
         <!-- Toggle Button for Mobile -->
         <button class="btn btn-outline-secondary d-lg-none me-2" type="button" data-bs-toggle="offcanvas"

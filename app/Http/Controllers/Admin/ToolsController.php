@@ -4,17 +4,25 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\View;
 
 class ToolsController extends Controller
 {
     public function clearCache(Request $request)
     {
         try {
-            Artisan::call('cache:clear');
-            Artisan::call('config:clear');
-            Artisan::call('route:clear');
-            Artisan::call('view:clear');
+            // Clear application cache
+            Cache::flush();
+
+            // Clear config cache
+            config()->clear();
+
+            // Clear route cache
+            app()->make('router')->clearResolvedInstances();
+
+            // Clear view cache
+            View::flush();
 
             return response()->json([
                 'success' => true,
