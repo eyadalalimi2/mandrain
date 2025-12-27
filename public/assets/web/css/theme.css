@@ -1,0 +1,203 @@
+:root {
+    --mandrain-green: #1c8c4b;
+    --mandrain-green-dark: #166c3a;
+    --mandrain-wood: #c08a55;
+    --mandrain-sun: #f4a528;
+    --mandrain-cream: #f9f6f1;
+    --mandrain-slate: #2f3b2f;
+    --mandrain-border: #e5e2da;
+}
+
+body {
+    font-family: 'Cairo', 'Tajawal', 'Segoe UI', sans-serif;
+    background-color: var(--mandrain-cream);
+    color: var(--mandrain-slate);
+}
+
+a {
+    color: var(--mandrain-green);
+}
+
+a:hover {
+    color: var(--mandrain-green-dark);
+}
+
+.text-mandrain {
+    color: var(--mandrain-green);
+}
+
+.bg-web {
+    background-color: var(--mandrain-cream);
+}
+
+.web-header {
+    background: linear-gradient(90deg, var(--mandrain-green-dark), var(--mandrain-green));
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.web-sidebar {
+    background-color: #fff;
+    border-inline-end: 1px solid var(--mandrain-border);
+}
+
+.web-sidebar .nav-link {
+    color: #6c757d;
+    transition: all 0.2s ease;
+}
+
+.web-sidebar .nav-link:hover,
+.web-sidebar .nav-link:focus {
+    background-color: #f2f0ea;
+    color: var(--mandrain-green-dark);
+    font-weight: 600;
+}
+
+.web-footer {
+    background-color: #fff;
+    border-top: 1px solid var(--mandrain-border);
+}
+
+.web-hero {
+    background: linear-gradient(135deg, var(--mandrain-green-dark), var(--mandrain-wood));
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.web-card {
+    background-color: #fff;
+    border: 1px solid var(--mandrain-border);
+}
+
+.btn-mandrain {
+    background-color: var(--mandrain-green);
+    color: #fff;
+    border: 1px solid var(--mandrain-green);
+}
+
+.btn-mandrain:hover {
+    background-color: var(--mandrain-green-dark);
+    border-color: var(--mandrain-green-dark);
+    color: #fff;
+}
+
+.btn-outline-mandrain {
+    color: var(--mandrain-green);
+    border: 1px solid var(--mandrain-green);
+}
+
+.btn-outline-mandrain:hover {
+    background-color: var(--mandrain-green);
+    color: #fff;
+}
+
+.btn-sun {
+    background-color: var(--mandrain-sun);
+    color: #5a3a03;
+    border: 1px solid var(--mandrain-sun);
+}
+
+.btn-sun:hover {
+    background-color: #ffa83f;
+    border-color: #ffa83f;
+    color: #4a2d02;
+}
+
+.bg-wood {
+    background-color: var(--mandrain-wood);
+}
+
+.bg-sun {
+    background-color: var(--mandrain-sun);
+}
+
+.btn-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(6px);
+}
+
+.btn-icon:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-dark {
+    background-color: #0f170f;
+    color: #e5e8dc;
+}
+
+.theme-dark .web-header {
+    background: linear-gradient(90deg, #0f2f1c, #164427);
+}
+
+.theme-dark .web-sidebar {
+    background-color: #162016;
+    border-color: #1f2b1f;
+}
+
+.theme-dark .web-sidebar .nav-link {
+    color: #c9cfc4;
+}
+
+.theme-dark .web-sidebar .nav-link:hover,
+.theme-dark .web-sidebar .nav-link:focus {
+    background-color: #1f2b1f;
+    color: #f4f6ef;
+}
+
+.theme-dark .web-footer {
+    background-color: #162016;
+    border-color: #1f2b1f;
+    color: #c9cfc4;
+}
+
+.theme-dark .web-card,
+.theme-dark .dropdown-menu,
+.theme-dark .web-hero {
+    background-color: #1a251a;
+    color: #e5e8dc;
+    border-color: #253225;
+}
+
+.theme-dark .web-hero {
+    background: linear-gradient(135deg, #0f2f1c, #8f6b45);
+}
+
+.theme-dark a,
+.theme-dark .text-muted {
+    color: #c9cfc4 !important;
+}
+
+.theme-dark .btn-icon {
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.theme-dark .btn-mandrain {
+    background-color: #1f9b56;
+    border-color: #1f9b56;
+}
+
+.theme-dark .btn-outline-mandrain {
+    color: #e5e8dc;
+    border-color: #1f9b56;
+}
+
+.theme-dark .btn-outline-mandrain:hover {
+    background-color: #1f9b56;
+}
