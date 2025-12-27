@@ -1,0 +1,170 @@
+/* ========================================
+   MANDRAIN ADMIN PANEL COLOR SYSTEM
+   ======================================== */
+
+/* Base Color Palette */
+:root {
+  /* Primary (Dark Green) Scale */
+  --color-primary-50: #f0f9f0;
+  --color-primary-100: #e0f2e0;
+  --color-primary-200: #c8e6c9;
+  --color-primary-300: #a5d6a7;
+  --color-primary-400: #81c784;
+  --color-primary-500: #4caf50;
+  --color-primary-600: #43a047;
+  --color-primary-700: #388e3c;
+  --color-primary-800: #2e7d32;
+  --color-primary-900: #1b5e20;
+
+  /* Secondary (Medium Green) */
+  --color-secondary: #66bb6a;
+
+  /* Accent (Gold/Yellow) Scale */
+  --color-accent-50: #fffde7;
+  --color-accent-100: #fff9c4;
+  --color-accent-200: #fff59d;
+  --color-accent-300: #fff176;
+  --color-accent-400: #ffee58;
+  --color-accent-500: #ffeb3b;
+  --color-accent-600: #fdd835;
+  --color-accent-700: #f9a825;
+  --color-accent-800: #f57f17;
+  --color-accent-900: #ff6f00;
+
+  /* Background (Cream/Beige Light) */
+  --color-background: #faf0e6;
+
+  /* Surface (White) */
+  --color-surface: #ffffff;
+
+  /* Text Colors */
+  --color-text-primary: #212529;
+  --color-text-secondary: #6c757d;
+  --color-text-muted: #adb5bd;
+
+  /* Border (Light Gray) */
+  --color-border: #e9ecef;
+  --color-border-light: #f8f9fa;
+
+  /* Semantic Colors */
+  --color-success: #28a745;
+  --color-warning: #ffc107;
+  --color-danger: #dc3545;
+  --color-info: #17a2b8;
+}
+
+/* ========================================
+   COMPONENT COLORS - THEME A (Dark Sidebar + Light Content)
+   ======================================== */
+
+:root {
+  /* Top Navbar */
+  --color-navbar-bg: var(--color-primary-800);
+  --color-navbar-text: #ffffff;
+  --color-navbar-icon: #ffffff;
+  --color-navbar-hover: var(--color-primary-700);
+  --color-navbar-active: var(--color-primary-600);
+  --color-navbar-border: var(--color-primary-900);
+
+  /* Sidebar */
+  --color-sidebar-bg: var(--color-primary-800);
+  --color-sidebar-text: #ffffff;
+  --color-sidebar-icon: #ffffff;
+  --color-sidebar-hover-bg: var(--color-primary-700);
+  --color-sidebar-active-bg: var(--color-accent-600);
+  --color-sidebar-active-indicator: var(--color-accent-500);
+  --color-sidebar-submenu-bg: var(--color-primary-900);
+
+  /* Footer */
+  --color-footer-bg: var(--color-primary-800);
+  --color-footer-text: #ffffff;
+  --color-footer-border: var(--color-primary-900);
+
+  /* Buttons */
+  --color-btn-primary-bg: var(--color-primary-600);
+  --color-btn-primary-text: #ffffff;
+  --color-btn-primary-hover: var(--color-primary-700);
+  --color-btn-primary-active: var(--color-primary-800);
+  --color-btn-primary-disabled: var(--color-primary-300);
+
+  --color-btn-outline-border: var(--color-primary-600);
+  --color-btn-outline-text: var(--color-primary-600);
+  --color-btn-outline-hover-bg: var(--color-primary-600);
+  --color-btn-outline-hover-text: #ffffff;
+
+  --color-btn-ghost-text: var(--color-primary-600);
+  --color-btn-ghost-hover-bg: var(--color-primary-100);
+
+  /* Tables */
+  --color-table-header-bg: var(--color-primary-100);
+  --color-table-row-hover: var(--color-primary-50);
+  --color-table-striped: var(--color-background);
+
+  /* Cards */
+  --color-card-header-bg: var(--color-primary-100);
+  --color-card-border: var(--color-border);
+  --color-card-shadow: rgba(45, 90, 39, 0.1);
+
+  /* Form Inputs */
+  --color-input-bg: var(--color-surface);
+  --color-input-border: var(--color-border);
+  --color-input-focus-ring: var(--color-primary-400);
+}
+
+/* ========================================
+   COMPONENT COLORS - THEME B (Light Sidebar)
+   ======================================== */
+
+[data-theme="light-sidebar"] {
+  /* Top Navbar */
+  --color-navbar-bg: var(--color-surface);
+  --color-navbar-text: var(--color-text-primary);
+  --color-navbar-icon: var(--color-text-secondary);
+  --color-navbar-hover: var(--color-primary-100);
+  --color-navbar-active: var(--color-primary-200);
+  --color-navbar-border: var(--color-border);
+
+  /* Sidebar */
+  --color-sidebar-bg: var(--color-surface);
+  --color-sidebar-text: var(--color-text-primary);
+  --color-sidebar-icon: var(--color-text-secondary);
+  --color-sidebar-hover-bg: var(--color-primary-100);
+  --color-sidebar-active-bg: var(--color-accent-200);
+  --color-sidebar-active-indicator: var(--color-accent-500);
+  --color-sidebar-submenu-bg: var(--color-background);
+
+  /* Footer */
+  --color-footer-bg: var(--color-surface);
+  --color-footer-text: var(--color-text-secondary);
+  --color-footer-border: var(--color-border);
+
+  /* Buttons */
+  --color-btn-primary-bg: var(--color-primary-600);
+  --color-btn-primary-text: #ffffff;
+  --color-btn-primary-hover: var(--color-primary-700);
+  --color-btn-primary-active: var(--color-primary-800);
+  --color-btn-primary-disabled: var(--color-primary-300);
+
+  --color-btn-outline-border: var(--color-primary-600);
+  --color-btn-outline-text: var(--color-primary-600);
+  --color-btn-outline-hover-bg: var(--color-primary-600);
+  --color-btn-outline-hover-text: #ffffff;
+
+  --color-btn-ghost-text: var(--color-primary-600);
+  --color-btn-ghost-hover-bg: var(--color-primary-100);
+
+  /* Tables */
+  --color-table-header-bg: var(--color-primary-100);
+  --color-table-row-hover: var(--color-primary-50);
+  --color-table-striped: var(--color-background);
+
+  /* Cards */
+  --color-card-header-bg: var(--color-primary-100);
+  --color-card-border: var(--color-border);
+  --color-card-shadow: rgba(0, 0, 0, 0.1);
+
+  /* Form Inputs */
+  --color-input-bg: var(--color-surface);
+  --color-input-border: var(--color-border);
+  --color-input-focus-ring: var(--color-primary-400);
+}
