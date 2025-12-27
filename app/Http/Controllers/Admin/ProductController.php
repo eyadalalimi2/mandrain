@@ -107,6 +107,17 @@ class ProductController extends Controller
     }
 
     /**
+     * Toggle product active status.
+     */
+    public function toggleStatus(Product $product)
+    {
+        $product->is_active = !$product->is_active;
+        $product->save();
+
+        return redirect()->back()->with('success', 'تم تحديث حالة المنتج بنجاح.');
+    }
+
+    /**
      * Remove the specified resource from storage.
      */
     public function destroy(Product $product)

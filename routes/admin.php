@@ -71,6 +71,8 @@ Route::middleware('auth:admin')->group(function () {
     ]);
 
     // Products
+    Route::patch('products/{product}/toggle-status', [\App\Http\Controllers\Admin\ProductController::class, 'toggleStatus'])->name('products.toggle-status');
+
     Route::resource('products', \App\Http\Controllers\Admin\ProductController::class)->names([
         'index' => 'products.index',
         'create' => 'products.create',

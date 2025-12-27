@@ -3,6 +3,7 @@
 namespace App\Http\Requests\Admin;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class UpdateProductRequest extends FormRequest
 {
@@ -25,7 +26,12 @@ class UpdateProductRequest extends FormRequest
             'category_id' => 'required|exists:categories,id',
             'unit_id' => 'required|exists:units,id',
             'name_ar' => 'required|string|max:255',
-            'sku' => 'required|string|max:255|unique:products,sku,' . $this->route('product'),
+            'sku' => [
+                'required',
+                'string',
+                'max:255',
+                Rule::unique('products', 'sku')->ignore($this->route('product')?->id ?? $this->route('product')),
+            ],
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             'short_description' => 'nullable|string|max:1000',
             'quantity' => 'required|numeric|min:0',

@@ -90,6 +90,17 @@
                                                 @endif
                                             </td>
                                             <td>
+                                                <form action="{{ route('admin.products.toggle-status', $product) }}"
+                                                    method="POST" class="d-inline">
+                                                    @csrf
+                                                    @method('PATCH')
+                                                    <button type="submit"
+                                                        class="btn btn-sm {{ $product->is_active ? 'btn-success' : 'btn-danger' }}"
+                                                        title="تبديل الحالة">
+                                                        <i
+                                                            class="fas {{ $product->is_active ? 'fa-toggle-on' : 'fa-toggle-off' }}"></i>
+                                                    </button>
+                                                </form>
                                                 <a href="{{ route('admin.products.show', $product) }}"
                                                     class="btn btn-info btn-sm">
                                                     <i class="fas fa-eye"></i>

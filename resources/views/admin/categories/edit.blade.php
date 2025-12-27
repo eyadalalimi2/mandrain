@@ -111,15 +111,32 @@
 
     @push('scripts')
         <script>
-            // Auto-generate slug from name_ar
-            document.getElementById('name_ar').addEventListener('input', function() {
-                const name = this.value;
-                const slug = name.toLowerCase()
-                    .replace(/[^\w\s-]/g, '') // Remove special characters
-                    .replace(/\s+/g, '-') // Replace spaces with hyphens
-                    .replace(/-+/g, '-') // Replace multiple hyphens with single
-                    .trim();
-                document.getElementById('slug').value = slug;
+            document.addEventListener('DOMContentLoaded', function() {
+                const nameInput = document.getElementById('name_ar');
+                const slugInput = document.getElementById('slug');
+                let slugManuallyEdited = slugInput.value.trim().length > 0; // preserve existing slug
+
+                const buildSlug = (text) => {
+                    return text
+                        .trim()
+                        .toLowerCase()
+                        .replace(/[\u064B-\u065F]/g, '') // Remove Arabic diacritics
+                        .replace(/[^\u0600-\u06FF0-9a-zA-Z\s-]/g, '') // Keep Arabic letters, numbers, and Latin
+                        .replace(/\s+/g, '-')
+                        .replace(/-+/g, '-')
+                        .replace(/^-+|-+$/g, '');
+                };
+
+                slugInput.addEventListener('input', function() {
+                    slugManuallyEdited = true;
+                });
+
+                nameInput.addEventListener('input', function() {
+                    if (slugManuallyEdited || slugInput.value.trim().length > 0) {
+                        return;
+                    }
+                    slugInput.value = buildSlug(this.value);
+                });
             });
         </script>
     @endpush
