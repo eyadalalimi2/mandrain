@@ -47,4 +47,37 @@ Route::middleware('auth:admin')->group(function () {
     Route::post('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
     Route::post('/profile/change-password', [ProfileController::class, 'changePassword'])->name('profile.change-password');
     Route::get('/settings', [ProfileController::class, 'settings'])->name('settings');
+
+    // Categories
+    Route::resource('categories', \App\Http\Controllers\Admin\CategoryController::class)->names([
+        'index' => 'categories.index',
+        'create' => 'categories.create',
+        'store' => 'categories.store',
+        'show' => 'categories.show',
+        'edit' => 'categories.edit',
+        'update' => 'categories.update',
+        'destroy' => 'categories.destroy',
+    ]);
+
+    // Units
+    Route::resource('units', \App\Http\Controllers\Admin\UnitController::class)->names([
+        'index' => 'units.index',
+        'create' => 'units.create',
+        'store' => 'units.store',
+        'show' => 'units.show',
+        'edit' => 'units.edit',
+        'update' => 'units.update',
+        'destroy' => 'units.destroy',
+    ]);
+
+    // Products
+    Route::resource('products', \App\Http\Controllers\Admin\ProductController::class)->names([
+        'index' => 'products.index',
+        'create' => 'products.create',
+        'store' => 'products.store',
+        'show' => 'products.show',
+        'edit' => 'products.edit',
+        'update' => 'products.update',
+        'destroy' => 'products.destroy',
+    ]);
 });
