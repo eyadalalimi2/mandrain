@@ -1,85 +1,102 @@
 <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container-fluid">
-        <!-- Toggle Button for Mobile -->
-        <button class="btn btn-outline-secondary d-lg-none me-2" type="button" data-bs-toggle="offcanvas"
-            data-bs-target="#sidebarOffcanvas" aria-controls="sidebarOffcanvas">
-            <i class="fas fa-bars"></i>
-        </button>
-
-        <!-- Brand/Title -->
-        <span class="navbar-brand mb-0 h1">لوحة التحكم - Mandrain</span>
-
-        <!-- Navbar Items -->
-        <div class="d-flex ms-auto align-items-center">
-            <!-- Theme Toggle -->
-            <button id="theme-toggle" class="btn btn-outline-secondary me-2" data-bs-toggle="tooltip"
-                data-bs-placement="bottom" title="تبديل الوضع">
-                <i class="fas fa-sun"></i>
+        <!-- Left Section: Toggle and Brand -->
+        <div class="d-flex align-items-center">
+            <!-- Toggle Button for Mobile -->
+            <button class="btn btn-outline-secondary d-lg-none me-2" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#sidebarOffcanvas" aria-controls="sidebarOffcanvas">
+                <i class="fas fa-bars"></i>
             </button>
 
-            <!-- Clear Cache -->
-            <button id="clear-cache-btn" class="btn btn-outline-secondary me-2" data-bs-toggle="tooltip"
-                data-bs-placement="bottom" title="مسح الكاش">
-                <i class="fas fa-sync-alt"></i>
-            </button>
+            <!-- Brand/Title -->
+            <span class="navbar-brand mb-0 h1">لوحة التحكم - ماندرين</span>
+        </div>
 
-            <!-- Open Website -->
-            <a href="/" target="_blank" class="btn btn-outline-secondary me-2" data-bs-toggle="tooltip"
-                data-bs-placement="bottom" title="فتح الموقع">
-                <i class="fas fa-globe"></i>
-            </a>
-
-            <!-- Messages -->
-            <div class="dropdown me-2">
-                <button class="btn btn-outline-secondary position-relative" type="button" id="messagesDropdown"
-                    data-bs-toggle="dropdown" aria-expanded="false" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                    title="الرسائل">
-                    <i class="fas fa-envelope"></i>
-                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning"
-                        id="messages-badge">0</span>
+        <!-- Center Section: Buttons -->
+        <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+                <!-- Theme Toggle -->
+                <button id="theme-toggle" class="btn btn-outline-secondary me-2" data-bs-toggle="tooltip"
+                    data-bs-placement="bottom" title="تبديل الوضع">
+                    <i class="fas fa-sun"></i>
                 </button>
-                <ul class="dropdown-menu border rounded">
-                    <li>
-                        <h6 class="dropdown-header">الرسائل</h6>
-                    </li>
-                    <li><a class="dropdown-item" href="#"><strong>المرسل 1</strong><br><small>مقتطف الرسالة
-                                1</small><br><small class="text-muted">منذ دقيقة</small></a></li>
-                    <li><a class="dropdown-item" href="#"><strong>المرسل 2</strong><br><small>مقتطف الرسالة
-                                2</small><br><small class="text-muted">منذ 5 دقائق</small></a></li>
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
-                    <li><a class="dropdown-item" href="{{ route('admin.messages.index') }}">عرض الكل</a></li>
-                </ul>
-            </div>
+            </li>
 
-            <!-- Notifications -->
-            <div class="dropdown me-2">
-                <button class="btn btn-outline-secondary position-relative" type="button" id="notificationsDropdown"
-                    data-bs-toggle="dropdown" aria-expanded="false" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                    title="التنبيهات">
-                    <i class="fas fa-bell"></i>
-                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning"
-                        id="notifications-badge">0</span>
+            <li class="nav-item">
+                <!-- Clear Cache -->
+                <button id="clear-cache-btn" class="btn btn-outline-secondary me-2" data-bs-toggle="tooltip"
+                    data-bs-placement="bottom" title="مسح الكاش">
+                    <i class="fas fa-sync-alt"></i>
                 </button>
-                <ul class="dropdown-menu border rounded">
-                    <li>
-                        <h6 class="dropdown-header">التنبيهات</h6>
-                    </li>
-                    <li><a class="dropdown-item" href="#"><small>تنبيه 1</small><br><small class="text-muted">منذ
-                                دقيقة</small></a></li>
-                    <li><a class="dropdown-item" href="#"><small>تنبيه 2</small><br><small class="text-muted">منذ
-                                5 دقائق</small></a></li>
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
-                    <li><a class="dropdown-item" href="#" id="mark-all-read">تحديد الكل كمقروء</a></li>
-                    <li><a class="dropdown-item" href="{{ route('admin.notifications.index') }}">عرض الكل</a></li>
-                </ul>
-            </div>
+            </li>
 
-            <!-- Admin Profile -->
-            <div class="dropdown">
+            <li class="nav-item">
+                <!-- Open Website -->
+                <a href="/" target="_blank" class="btn btn-outline-secondary me-2" data-bs-toggle="tooltip"
+                    data-bs-placement="bottom" title="فتح الموقع">
+                    <i class="fas fa-globe"></i>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <!-- Messages -->
+                <div class="dropdown me-2">
+                    <button class="btn btn-outline-secondary position-relative" type="button" id="messagesDropdown"
+                        data-bs-toggle="dropdown" aria-expanded="false" data-bs-toggle="tooltip"
+                        data-bs-placement="bottom" title="الرسائل">
+                        <i class="fas fa-envelope"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning"
+                            id="messages-badge">0</span>
+                    </button>
+                    <ul class="dropdown-menu border rounded">
+                        <li>
+                            <h6 class="dropdown-header">الرسائل</h6>
+                        </li>
+                        <li><a class="dropdown-item" href="#"><strong>المرسل 1</strong><br><small>مقتطف الرسالة
+                                    1</small><br><small class="text-muted">منذ دقيقة</small></a></li>
+                        <li><a class="dropdown-item" href="#"><strong>المرسل 2</strong><br><small>مقتطف الرسالة
+                                    2</small><br><small class="text-muted">منذ 5 دقائق</small></a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="{{ route('admin.messages.index') }}">عرض الكل</a></li>
+                    </ul>
+                </div>
+            </li>
+
+            <li class="nav-item">
+                <!-- Notifications -->
+                <div class="dropdown me-2">
+                    <button class="btn btn-outline-secondary position-relative" type="button"
+                        id="notificationsDropdown" data-bs-toggle="dropdown" aria-expanded="false"
+                        data-bs-toggle="tooltip" data-bs-placement="bottom" title="التنبيهات">
+                        <i class="fas fa-bell"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning"
+                            id="notifications-badge">0</span>
+                    </button>
+                    <ul class="dropdown-menu border rounded">
+                        <li>
+                            <h6 class="dropdown-header">التنبيهات</h6>
+                        </li>
+                        <li><a class="dropdown-item" href="#"><small>تنبيه 1</small><br><small
+                                    class="text-muted">منذ
+                                    دقيقة</small></a></li>
+                        <li><a class="dropdown-item" href="#"><small>تنبيه 2</small><br><small
+                                    class="text-muted">منذ
+                                    5 دقائق</small></a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#" id="mark-all-read">تحديد الكل كمقروء</a></li>
+                        <li><a class="dropdown-item" href="{{ route('admin.notifications.index') }}">عرض الكل</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+
+        <!-- Right Section: Admin Profile -->
+        <ul class="navbar-nav">
+            <li class="nav-item dropdown">
                 <button class="btn btn-outline-secondary d-flex align-items-center" type="button" id="profileDropdown"
                     data-bs-toggle="dropdown" aria-expanded="false">
                     <img src="{{ Auth::guard('admin')->user()->avatar_url }}" alt="Avatar" class="rounded-circle me-2"
@@ -103,8 +120,8 @@
                         </form>
                     </li>
                 </ul>
-            </div>
-        </div>
+            </li>
+        </ul>
     </div>
 </nav>
 
